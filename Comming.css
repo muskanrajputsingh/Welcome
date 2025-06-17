@@ -1,0 +1,86 @@
+@import url('https://fonts.googleapis.com/css2?family=Orbitron:wght@700&display=swap');
+
+.coming-bg {
+  position: fixed;
+  inset: 0;
+  width: 100vw;
+  height: 100vh;
+  /* background: linear-gradient(120deg, #232526 0%, #414345 100%); */
+  background-image: url('https://assets-smart.blend-api.com/backgrounds/moody-textured-black-and-white-background-with-depth-and-drama.jpg?format=webp&width=768&height=768');
+  
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  overflow: hidden;
+  z-index: 0;
+}
+
+.coming-overlay {
+  position: absolute;
+  inset: 0;
+  width: 100vw;
+  height: 100vh;
+  background: rgba(0,0,0,0.7);
+  z-index: 1;
+}
+
+.coming-logo {
+  position: absolute;
+  top: 32px;
+  left: 40px;
+  width: 90px;
+  height: auto;
+  z-index: 2;
+  background: transparent;
+}
+
+.coming-center {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  z-index: 3;
+  text-align: center;
+}
+
+.coming-title {
+  font-family: 'Orbitron', 'Segoe UI', Arial, sans-serif;
+  font-size: 3rem;
+  color: #fff;
+  letter-spacing: 0.1em;
+  font-weight: 700;
+  text-shadow: 0 4px 32px #000, 0 1px 0 #222;
+  animation: fadeInUp 1.2s cubic-bezier(.23,1.01,.32,1) both;
+}
+
+.coming-dots {
+  display: inline-block;
+  animation: blink 1.2s infinite steps(1, end);
+}
+
+@keyframes fadeInUp {
+  0% {
+    opacity: 0;
+    transform: translate(-50%, -40%) scale(0.95);
+  }
+  100% {
+    opacity: 1;
+    transform: translate(-50%, -50%) scale(1);
+  }
+}
+
+@keyframes blink {
+  0%, 100% { opacity: 1; }
+  50% { opacity: 0.2; }
+}
+
+@media (max-width: 600px) {
+  .coming-title {
+    font-size: 2rem;
+  }
+  .coming-logo {
+    width: 60px;
+    top: 16px;
+    left: 16px;
+  }
+}
